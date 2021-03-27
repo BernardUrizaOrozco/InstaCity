@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records. ¿Do you wanna be registered? <a href="/register">¡Click here!</a>',
+    'failed' => 'These credentials do not match our records. ¿Do you wanna be registered? <a class="text-blue-700" href="/register">¡Click here!</a>',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
