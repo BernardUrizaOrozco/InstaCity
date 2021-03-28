@@ -23,8 +23,10 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'description' => Str::random(10),
+            'caption' => Str::random(10),
+            'idUser' => mt_rand(1,10),
             'likes' => mt_rand(1, 999999),
+            'image' => 'http://lorempixel.com/400/200/sports/'
         ];
     }
 }
