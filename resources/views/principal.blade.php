@@ -5,6 +5,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table>
+                        <?php echo var_export($posts, true) ?>
                         @if($posts && is_array($posts))
                             @foreach($posts as $key=>$post)
                                 <td>key : {{$key}}</td>

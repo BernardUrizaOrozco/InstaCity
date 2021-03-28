@@ -44,7 +44,7 @@
                                 {{ __('Log out') }}
                             </x-dropdown-link>
 
-                            <x-dropdown-link :href="route('myProfile')"
+                            <x-dropdown-link :href="route('me')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('My profile') }}

@@ -22,9 +22,16 @@ class PostsController extends Controller
         return view('principal', compact('posts'));
     }
     
-    public function show(User $user)
+    public function show($username)
     {
+        $user = User::where('username', '=', $username)->firstOrFail();
         $posts = $user->posts->toArray();
+        return view('principal', compact('posts'));
+    }
+    public function me()
+    {
+        $user_id = Auth::user()->id;
+        $posts = Post::where('user_id', $user_id)->get()->toArray();
         return view('principal', compact('posts'));
     }
 }
