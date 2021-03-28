@@ -2,18 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Post;
+use App\Models\ProfileUserPivot;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
-class PostFactory extends Factory
+class ProfileUserPivotFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Post::class;
+    protected $model = ProfileUserPivot::class;
 
     /**
      * Define the model's default state.
@@ -23,10 +22,8 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'caption' => Str::random(10),
+            'profile_id' => mt_rand(1,11),
             'user_id' => mt_rand(1,11),
-            'likes' => mt_rand(1, 999999),
-            'image' => 'http://lorempixel.com/400/200/sports/'
         ];
     }
 }

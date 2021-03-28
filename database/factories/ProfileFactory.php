@@ -2,30 +2,31 @@
 
 namespace Database\Factories;
 
-use App\Models\Post;
+use App\Models\Profile;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class PostFactory extends Factory
+class ProfileFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Post::class;
+    protected $model = Profile::class;
 
     /**
      * Define the model's default state.
      *
      * @return array
      */
+    protected $counter =1;
     public function definition()
     {
         return [
-            'caption' => Str::random(10),
-            'user_id' => mt_rand(1,11),
-            'likes' => mt_rand(1, 999999),
+            'user_id' => $this->counter++,
+            'title' => Str::random(7)." ".Str::random(10),
+            'description' => Str::random(2)." ".Str::random(10).". ".Str::random(10),
             'image' => 'http://lorempixel.com/400/200/sports/'
         ];
     }
