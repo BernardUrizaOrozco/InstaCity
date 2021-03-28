@@ -17,10 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });*/
+use App\Http\Controllers\PostsController;
 
-Route::get('/', function () {
-    return view('principal');
-})->middleware(['auth'])->name('principal');
+Route::get('/',[PostsController::class, 'index'])->middleware(['auth'])->name('principal');
 
 
 Route::get('/myProfile', function () {

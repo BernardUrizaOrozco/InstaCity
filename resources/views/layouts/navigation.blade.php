@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 shadow-xl">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -8,6 +8,9 @@
                     <a href="/">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
+                    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                        InstaCity
+                    </h2>
                 </div>
 
                 <!-- Navigation Links -->
