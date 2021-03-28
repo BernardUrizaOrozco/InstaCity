@@ -19,7 +19,12 @@ Route::get('/', function () {
 });*/
 
 Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+    return view('principal');
+})->middleware(['auth'])->name('principal');
+
+
+Route::get('/myProfile', function () {
+    return view('myProfile');
+})->middleware(['auth'])->name('myProfile');
 
 require __DIR__.'/auth.php';
