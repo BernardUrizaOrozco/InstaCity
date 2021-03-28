@@ -20,6 +20,7 @@ Route::get('/', function () {
 use App\Http\Controllers\PostsController;
 
 Route::get('/',[PostsController::class, 'index'])->middleware(['auth'])->name('principal');
+Route::get('/show/{user}',[PostsController::class, 'show'])->name('show');
 
 
 Route::get('/myProfile', function () {

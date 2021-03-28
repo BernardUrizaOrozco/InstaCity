@@ -17,11 +17,11 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('caption');
             $table->string('likes');
-            $table->unsignedBigInteger('idUser');
+            $table->unsignedBigInteger('user_id');
             $table->string('image');
             $table->timestamps();
 
-            $table->index('idUser');
+            $table->index('user_id');
         });
     }
 

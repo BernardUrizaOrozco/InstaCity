@@ -5,7 +5,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table>
-                        @if($posts)
+                        @if($posts && is_array($posts))
                             @foreach($posts as $key=>$post)
                                 <td>key : {{$key}}</td>
                                 @foreach($post as $index=>$data)
@@ -14,6 +14,9 @@
                                         <td>{{$data}}</td>
                                     </tr>
                                 @endforeach
+                                <tr>
+                                    <td colspan="2"><img src="{{$post["image"]}}" /></td>
+                                </tr>
                             @endforeach
                         @endif
                     </table>

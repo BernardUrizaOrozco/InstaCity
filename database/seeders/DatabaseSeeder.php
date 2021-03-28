@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             'description' => Str::random(2)." ".Str::random(10).". ".Str::random(10),
             'email_verified_at' => now(),
             'password' => Hash::make('12341234'), // password
-            'remember_token' => Str::random(10),
+            'remember_token' => Str::random(11),
         ]);
     }
 }

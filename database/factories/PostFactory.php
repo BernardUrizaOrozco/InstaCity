@@ -24,7 +24,7 @@ class PostFactory extends Factory
     {
         return [
             'caption' => Str::random(10),
-            'idUser' => mt_rand(1,10),
+            'user_id' => mt_rand(1,10),
             'likes' => mt_rand(1, 999999),
             'image' => 'http://lorempixel.com/400/200/sports/'
         ];
