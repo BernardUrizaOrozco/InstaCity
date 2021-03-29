@@ -20,7 +20,6 @@ class DatabaseSeeder extends Seeder
             PostSeeder::class,
             UserSeeder::class,
             ProfileSeeder::class,
-            ProfileUserPivotSeeder::class,
         ]);
         
         DB::table('users')->insert([

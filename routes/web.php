@@ -18,9 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });*/
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\ProfileController;
 
-Route::get('/',[PostsController::class, 'index'])->middleware(['auth'])->name('principal');
-Route::get('/show/{username}',[PostsController::class, 'show'])->name('show');
-Route::get('/me',[PostsController::class, 'me'])->name('me');
+Route::get('/post/create',[PostsController::class, 'create'])->middleware(['auth'])->name('create');
+Route::get('/post/{post}',[ProfileController::class, 'show'])->name('show');
+Route::get('/post',[ProfileController::class, 'store'])->name('store');
+
+Route::get('/',[ProfileController::class, 'index'])->middleware(['auth'])->name('principal');
+Route::get('/show/{username}',[ProfileController::class, 'show'])->name('show');
+Route::get('/me',[ProfileController::class, 'me'])->name('me');
 
 require __DIR__.'/auth.php';
