@@ -1,0 +1,1 @@
+<div>{!! var_export($followings, true) !!}</div>

@@ -14,8 +14,17 @@ class ProfileController extends Controller
     public function index()
     {
         $user_id = Auth::user()->id;
-        $posts = Post::where('user_id', $user_id)->get()->toArray();
-        return view('home', compact('posts'));
+        $followings = Auth::user()->following;
+        $posts=[];
+        foreach ($followings as $following) {
+            $user = User::where('id', '=', $following->id)->firstOrFail();
+            foreach ($user->posts->toArray() as $post) {
+                $posts[] = $post;
+            }
+        }
+        shuffle($posts);
+        $followings = Auth::user()->following->toArray();
+        return view('home', compact('posts', 'followings'));
     }
     
     public function show($username)
@@ -26,6 +35,7 @@ class ProfileController extends Controller
         $followers = Auth::user()->profile->followers->toArray();
         return view('profile', compact('posts', 'following', 'followers'));
     }
+
     public function me()
     {
         $user_id = Auth::user()->id;
