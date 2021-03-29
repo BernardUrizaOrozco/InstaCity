@@ -15,4 +15,8 @@ class PostsController extends Controller
         $this->middleware('auth');
     }
 
+    public function show(Post $post)
+    {
+        return view('post', compact('post'));
+    }
 }

@@ -21,8 +21,8 @@ use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProfileController;
 
 Route::get('/post/create',[PostsController::class, 'create'])->middleware(['auth'])->name('create');
-Route::get('/post/{post}',[ProfileController::class, 'show'])->name('show');
-Route::get('/post',[ProfileController::class, 'store'])->name('store');
+Route::get('/post/{post}',[PostsController::class, 'show'])->name('show');
+Route::get('/post',[PostsController::class, 'store'])->name('store');
 
 Route::get('/',[ProfileController::class, 'index'])->middleware(['auth'])->name('principal');
 Route::get('/show/{username}',[ProfileController::class, 'show'])->name('show');
