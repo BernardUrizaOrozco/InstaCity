@@ -13,17 +13,15 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        $user_id = Auth::user()->id;
         $followings = Auth::user()->following;
         $posts=[];
         foreach ($followings as $following) {
-            $user = User::where('id', '=', $following->id)->firstOrFail();
-            foreach ($user->posts->toArray() as $post) {
+            foreach ($following->user->posts->toArray() as $post) {
                 $posts[] = $post;
             }
         }
         shuffle($posts);
-        $followings = Auth::user()->following->toArray();
+        $followings = $followings->toArray();
         return view('home', compact('posts', 'followings'));
     }
     
