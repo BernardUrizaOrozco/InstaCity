@@ -15,7 +15,7 @@ class ProfileController extends Controller
     {
         $user_id = Auth::user()->id;
         $posts = Post::where('user_id', $user_id)->get()->toArray();
-        return view('principal', compact('posts'));
+        return view('home', compact('posts'));
     }
     
     public function show($username)
@@ -24,7 +24,7 @@ class ProfileController extends Controller
         $posts = $user->posts->toArray();
         $following = Auth::user()->following->toArray();
         $followers = Auth::user()->profile->followers->toArray();
-        return view('principal', compact('posts', 'following', 'followers'));
+        return view('profile', compact('posts', 'following', 'followers'));
     }
     public function me()
     {
@@ -32,6 +32,6 @@ class ProfileController extends Controller
         $posts = Post::where('user_id', $user_id)->get()->toArray();
         $following = Auth::user()->following->toArray();
         $followers = Auth::user()->profile->followers->toArray();
-        return view('principal', compact('posts', 'following', 'followers'));
+        return view('profile', compact('posts', 'following', 'followers'));
     }
 }
