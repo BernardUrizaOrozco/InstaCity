@@ -20,7 +20,7 @@ Route::get('/', function () {
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProfileController;
 
-Route::get('/post/create',[PostsController::class, 'create'])->middleware(['auth'])->name('create');
+Route::get('/create',[PostsController::class, 'create'])->name('create');
 Route::get('/post/{post}',[PostsController::class, 'show'])->name('show');
 Route::get('/post',[PostsController::class, 'store'])->name('store');
 

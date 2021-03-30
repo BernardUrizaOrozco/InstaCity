@@ -12,10 +12,6 @@
                         InstaCity
                     </h2>
                 </div>
-
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                </div>
             </div>
 
             <!-- Settings Dropdown -->
@@ -38,16 +34,20 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Log out') }}
+                            <x-dropdown-link :href="route('create')">
+                                {{ __('New post') }}
                             </x-dropdown-link>
 
                             <x-dropdown-link :href="route('me')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('My profile') }}
+                            </x-dropdown-link>
+
+                            <x-dropdown-link :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Log out') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
