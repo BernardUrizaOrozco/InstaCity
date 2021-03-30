@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             PostSeeder::class,
             UserSeeder::class,
             ProfileSeeder::class,
+            CommentSeeder::class
         ]);
         
         DB::table('users')->insert([
@@ -29,6 +30,23 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('12341234'), // password
             'remember_token' => Str::random(11),
+        ]);
+
+        DB::table('profile_user')->insert([//FOLLOWERS
+            'profile_id' => 11,
+            'user_id' => 2,
+        ]);
+        DB::table('profile_user')->insert([
+            'profile_id' => 11,
+            'user_id' => 3,
+        ]);
+        DB::table('profile_user')->insert([//FOLLOWINGS
+            'profile_id' => 7,
+            'user_id' => 11,
+        ]);
+        DB::table('profile_user')->insert([
+            'profile_id' => 9,
+            'user_id' => 11,
         ]);
     }
 }
