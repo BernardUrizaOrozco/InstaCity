@@ -26,7 +26,7 @@ class PostFactory extends Factory
             'caption' => Str::random(10),
             'user_id' => mt_rand(1,11),
             'likes' => mt_rand(1, 999999),
-            'image' => 'http://lorempixel.com/400/200/sports/'
+            'image' => 'generic.jpg'
         ];
     }
 }

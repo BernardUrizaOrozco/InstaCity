@@ -27,7 +27,7 @@ class ProfileFactory extends Factory
             'user_id' => $this->counter++,
             'title' => Str::random(7)." ".Str::random(10),
             'description' => Str::random(2)." ".Str::random(10).". ".Str::random(10),
-            'image' => 'http://lorempixel.com/400/200/sports/'
+            'image' => 'generic.jpg'
         ];
     }
 }
