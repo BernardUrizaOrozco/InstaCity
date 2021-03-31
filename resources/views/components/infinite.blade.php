@@ -11,7 +11,7 @@
         <tr>
             <td colspan="2">
                 <a href="/post/{{$post["id"]}}">
-                    <img src="{{$post["image"]}}" />
+                    <img src="images/{{$post["image"]}}" />
                 </a>
             </td>
         </tr>

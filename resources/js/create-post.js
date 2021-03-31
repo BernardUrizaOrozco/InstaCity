@@ -9,7 +9,7 @@ $(function() {
                 var reader = new FileReader();
 
                 reader.onload = function(event) {
-                    $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                    $($.parseHTML('<img>')).attr('src', event.target.result).addClass('w-full rounded-md').appendTo(placeToInsertImagePreview);
                 }
 
                 reader.readAsDataURL(input.files[i]);

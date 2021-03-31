@@ -21,6 +21,7 @@ use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProfileController;
 
 Route::get('/create',[PostsController::class, 'create'])->name('create');
+Route::post('/add',[PostsController::class, 'store'])->name('add');
 Route::get('/post/{post}',[PostsController::class, 'show'])->name('show');
 Route::get('/post',[PostsController::class, 'store'])->name('store');
 
