@@ -18,9 +18,18 @@
         <tr>
             <td colspan="2">
                 @foreach($post->comments as $comment)
+                    <br>
                     @foreach($comment->toArray() as $index=>$data)
                         <p>{{$index}} {{$data}}</p>
                     @endforeach
+
+                    <p>RESPUESTAS AL COMMENT</p>
+                    @foreach($comment->responses as $response)
+                        @foreach($response->toArray() as $indexResponse=>$dataResponse)
+                            <p>{{$indexResponse}} - {{$dataResponse}}</p>
+                        @endforeach
+                    @endforeach
+
                 @endforeach
             </td>
         </tr>
