@@ -16,7 +16,7 @@ class ProfileController extends Controller
         $followings = Auth::user()->following;
         $posts=[];
         foreach ($followings as $following) {
-            foreach ($following->user->posts->toArray() as $post) {
+            foreach ($following->user->posts as $post) {
                 $posts[] = $post;
             }
         }
@@ -37,7 +37,7 @@ class ProfileController extends Controller
     public function me()
     {
         $user_id = Auth::user()->id;
-        $posts = Post::where('user_id', $user_id)->get()->toArray();
+        $posts = Post::where('user_id', $user_id)->get();
         $following = Auth::user()->following->toArray();
         $followers = Auth::user()->profile->followers->toArray();
         return view('profile', compact('posts', 'following', 'followers'));

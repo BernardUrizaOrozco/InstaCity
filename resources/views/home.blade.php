@@ -9,7 +9,7 @@
                             <x-infinite :posts="$posts"/>
                         </div>
                         <div>
-                            <x-following-list :followings="$followings"/>ggg
+                            <x-following-list :followings="$followings"/>
                         </div>
                     </div>
                 </div>
