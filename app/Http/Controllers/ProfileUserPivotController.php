@@ -12,8 +12,6 @@ use Intervention\Image\Facades\Image;
 
 class ProfileUserPivotController extends Controller
 {
-    //
-    
     public function __construct()
     {
         $this->middleware('auth');

@@ -20,6 +20,7 @@ Route::get('/', function () {
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfileUserPivotController;
+use App\Http\Controllers\CommentController;
 
 Route::get('/create',[PostsController::class, 'create'])->name('create');
 Route::post('/add',[PostsController::class, 'store'])->name('add');
@@ -29,6 +30,8 @@ Route::get('/post',[PostsController::class, 'store'])->name('store');
 
 Route::post('/follow',[ProfileUserPivotController::class, 'follow'])->name('follow');
 Route::post('/unfollow',[ProfileUserPivotController::class, 'unfollow'])->name('unfollow');
+
+Route::post('/comment',[CommentController::class, 'comment'])->name('comment');
 
 Route::get('/',[ProfileController::class, 'index'])->middleware(['auth'])->name('principal');
 Route::get('/show/{username}',[ProfileController::class, 'show'])->name('show');
