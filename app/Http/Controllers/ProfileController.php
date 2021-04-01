@@ -37,4 +37,28 @@ class ProfileController extends Controller
         $user = User::where('id', '=', $user_id)->firstOrFail();
         return view('profile', compact('user'));
     }
+
+    public function config()
+    {
+        return view('config');
+    }
+    public function change(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        $imageName = time().'.'.$request->image->extension();  
+        $request->image->move(public_path('images'), $imageName);
+
+        $profile = Auth::user()->profile;
+        $profile->description = $request->description;
+        $profile->image = $imageName;
+        $profile->save();
+
+        return back()
+        ->with('success','You have successfully upload image.')
+        ->with('image',$imageName)
+        ->with('id',$profile->id); 
+    }
+    
 }

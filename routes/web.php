@@ -36,5 +36,7 @@ Route::post('/comment',[CommentController::class, 'comment'])->name('comment');
 Route::get('/',[ProfileController::class, 'index'])->middleware(['auth'])->name('principal');
 Route::get('/show/{username}',[ProfileController::class, 'show'])->name('show');
 Route::get('/me',[ProfileController::class, 'me'])->name('me');
+Route::get('/config',[ProfileController::class, 'config'])->name('config');
+Route::post('/change',[ProfileController::class, 'change'])->name('change');
 
 require __DIR__.'/auth.php';

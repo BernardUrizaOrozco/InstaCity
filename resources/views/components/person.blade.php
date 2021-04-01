@@ -22,7 +22,7 @@
 
             @if( Auth::user()->id == $user->id )
             <!-- follow button -->
-            <a href="#" class="bg-white px-2 py-1 border
+            <a href="{{ route('config') }}" class="bg-white px-2 py-1 border
                       text-black font-semibold text-sm rounded text-center 
                       sm:inline-block block">Edit profile</a>
             @else
