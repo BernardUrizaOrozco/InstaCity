@@ -16,7 +16,7 @@
     </a>
     <div class="px-3 pb-2">
         <div class="pt-2">
-            <a class="text-sm text-gray-400 font-medium" href="javascript:alert(2)">
+            <a class="text-sm text-gray-400 font-medium" href="javascript:alert('toma tu like')">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                     class="hero-icon">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -27,7 +27,8 @@
         </div>
         <div class="pt-1">
             <div class="mb-2 text-sm">
-                <a href="/show/{!! $post->user->username !!}" class="mr-2 font-bold hover:underline">{!! $post->user->username !!}</a>
+                <a href="/show/{!! $post->user->username !!}" class="mr-2 font-bold hover:underline">{!!
+                    $post->user->username !!}</a>
                 {!! $post->caption !!}
             </div>
         </div>
@@ -35,21 +36,49 @@
             comments</div>
         <div class="mb-2">
             @foreach($post->comments as $comment)
-            <div class="mb-2 text-sm">
-                <a href="/show/{!! $comment->user->username !!}" class="mr-2 font-bold hover:underline">{!!
-                    $comment->user->username !!}</a> {!!
-                $comment->caption !!}
+            <div class="mt-6 text-sm space-x-4">
+                <div class="rounded-full h-8 w-8 bg-gray-500 inline-block items-center overflow-hidden">
+                    <img src="/images/{{ $comment->user->profile->image }}" alt="profilepic">
+                </div>
+                <div class="align-top inline-block">
+                    <div>
+                    <a href="/show/{!! $comment->user->username !!}" class="mr-2 font-bold hover:underline">{!!
+                        $comment->user->username !!}</a> {!!
+                    $comment->caption !!}
+                    </div>
+                    <div class="text-sm space-x-4">
+                        <div class="text-gray-300 inline-block text-xs">
+                            {!! $comment->created_at !!}
+                        </div>
+                        @if( $canComment )
+                        <div class="align-top inline-block">
+                            <a href="javascript:alert(3)" class="mr-2 font-bold hover:underline">Replay</a>
+                        </div>
+                        @endif
+                    </div>
+                </div>
             </div>
             @foreach($comment->responses as $response)
-            <div class="mb-2 ml-6 text-sm">
-                <a href="/show/{!! $response->user->username !!}" class="mr-2 font-bold hover:underline">{!! $response->user->username !!}</a> {!!
-                $response->caption !!}
+            <div class="mt-6 text-sm space-x-4">
+                <div class="ml-6 rounded-full h-8 w-8 bg-gray-500 inline-block items-center overflow-hidden">
+                    <img src="/images/{{ $response->user->profile->image }}" alt="profilepic">
+                </div>
+                <div class="text-sm text-gray-800 inline-block align-top">
+                    <div>
+                        <a href="/show/{!! $response->user->username !!}" class="mr-2 font-bold hover:underline">{!!
+                            $response->user->username !!}</a>
+                        {!! $response->caption !!}
+                    </div>
+                    <div class="text-gray-300 inline-block text-xs">
+                        {!! $response->created_at !!}
+                    </div>
+                </div>
             </div>
             @endforeach
             @endforeach
         </div>
     </div>
-    @if( $canComment  )
-        <x-commenting :post="$post" />
+    @if( $canComment )
+    <x-commenting :post="$post" />
     @endif
 </div>
