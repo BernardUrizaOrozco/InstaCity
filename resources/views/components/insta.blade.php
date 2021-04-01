@@ -11,7 +11,9 @@
             <span class="pt-1 ml-2 font-bold text-sm">{!! $post->user->username !!}</span>
         </a>
     </div>
-    <img class="w-full bg-cover border-b" src="/images/{!! $post->image !!}">
+    <a href="/post/{!! $post->id !!}">
+        <img class="w-full bg-cover border-b" src="/images/{!! $post->image !!}">
+    </a>
     <div class="px-3 pb-2">
         <div class="pt-2">
             <a class="text-sm text-gray-400 font-medium" href="javascript:alert(2)">
@@ -47,5 +49,7 @@
             @endforeach
         </div>
     </div>
-    <x-commenting :post="$post" />
+    @if( $canComment  )
+        <x-commenting :post="$post" />
+    @endif
 </div>

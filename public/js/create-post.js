@@ -13,6 +13,7 @@ $(function () {
         var reader = new FileReader();
 
         reader.onload = function (event) {
+          $(placeToInsertImagePreview).html("");
           $($.parseHTML('<img>')).attr('src', event.target.result).addClass('w-full rounded-md').appendTo(placeToInsertImagePreview);
         };
 

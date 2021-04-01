@@ -7,14 +7,16 @@ use Illuminate\View\Component;
 class Insta extends Component
 {
     public $post;
+    public $canComment;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($post)
+    public function __construct($post, $canComment)
     {
         $this->post = $post;
+        $this->canComment = $canComment;
     }
 
     /**
