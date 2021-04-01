@@ -28,10 +28,7 @@ class ProfileController extends Controller
     public function show($username)
     {
         $user = User::where('username', '=', $username)->firstOrFail();
-        $posts = $user->posts->toArray();
-        $following = Auth::user()->following->toArray();
-        $followers = Auth::user()->profile->followers->toArray();
-        return view('profile', compact('posts', 'following', 'followers'));
+        return view('profile', compact('user'));
     }
 
     public function me()

@@ -8,3 +8,7 @@
     display: inline;
     top: -1px;
 }
+.focus\:border-transparent:focus {
+    border-color: transparent;
+    --tw-ring-color: transparent !important;
+}
