@@ -44,6 +44,7 @@ class PostsController extends Controller
 
         return back()
         ->with('success','You have successfully upload image.')
-        ->with('image',$imageName); 
+        ->with('image',$imageName)
+        ->with('id',$post->id); 
     }
 }

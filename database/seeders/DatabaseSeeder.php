@@ -34,20 +34,20 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('profile_user')->insert([//FOLLOWERS
-            'profile_id' => 11,
+            'profile_id' => 6,
             'user_id' => 2,
         ]);
         DB::table('profile_user')->insert([
-            'profile_id' => 11,
+            'profile_id' => 6,
             'user_id' => 3,
         ]);
         DB::table('profile_user')->insert([//FOLLOWINGS
             'profile_id' => 7,
-            'user_id' => 11,
+            'user_id' => 6,
         ]);
         DB::table('profile_user')->insert([
             'profile_id' => 4,
-            'user_id' => 11,
+            'user_id' => 6,
         ]);
     }
 }

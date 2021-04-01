@@ -28,7 +28,9 @@
                                     <button type="button" class="close" data-dismiss="alert">×</button>
                                     <strong>{{ $message }}</strong>
                                 </div>
-                                <img src="images/{{ Session::get('image') }}">
+                                <a href="post/{{ Session::get('id') }}">
+                                    <img src="images/{{ Session::get('image') }}">
+                                </a>
                                 @endif
 
                                 @if (count($errors) > 0)

@@ -24,8 +24,8 @@ class CommentFactory extends Factory
     {
         return [
             'caption' => "Sólo para comentar que ".Str::random(4)." ".Str::random(10).Str::random(2)." ".Str::random(7).Str::random(2)." ".Str::random(10),
-            'user_id' => mt_rand(1,11),
-            'post_id' => mt_rand(1,50),
+            'user_id' => mt_rand(1,6),
+            'post_id' => mt_rand(1,5),
             'likes' => mt_rand(1, 200),
         ];
     }

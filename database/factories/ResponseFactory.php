@@ -24,8 +24,8 @@ class ResponseFactory extends Factory
     {
         return [
             'caption' => "Sólo para responder que ".Str::random(4)." ".Str::random(10).Str::random(2)." ".Str::random(7).Str::random(2)." ".Str::random(10),
-            'user_id' => mt_rand(1,11),
-            'comment_id' => mt_rand(1,300),
+            'user_id' => mt_rand(1,6),
+            'comment_id' => mt_rand(1,13),
             'likes' => mt_rand(1, 200),
         ];
     }

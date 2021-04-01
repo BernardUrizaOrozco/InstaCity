@@ -39,9 +39,15 @@
                             <a href="/me" class="mr-2 flex font-bold hover:underline self-center">
                                 {{ __('My profile') }}
                             </a>
-                            <a href="/logout" class="mr-2 flex font-bold hover:underline self-center">
-                                {{ __('Log out') }}
-                            </a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+    
+                                <x-dropdown-link :href="route('logout')"
+                                        onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                    {{ __('Log out') }}
+                                </x-dropdown-link>
+                            </form>
                         </form>
                     </x-slot>
                 </x-dropdown>
