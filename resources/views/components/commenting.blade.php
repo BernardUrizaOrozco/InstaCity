@@ -14,6 +14,7 @@
         </div>
         <div class="flex-shrink w-16 h-12 flex">
             <input type="text" class="hidden" name="post_id" id="post_id" value="{{ $post->id }}">
+            <input type="text" class="hidden" name="comment_id" id="comment_id" value="-1">
             <button class="text-blue-400 hover:text-blue-800 self-center" type="submit">Post</button>
         </div>
     </div>

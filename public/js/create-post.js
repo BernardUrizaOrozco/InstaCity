@@ -25,6 +25,11 @@ $(function () {
   $('#gallery-photo-add').on('change', function () {
     imagesPreview(this, 'div.gallery');
   });
+  $('.replayTo').on('click', function () {
+    $("#caption").val("@" + $(this).data("username") + " ");
+    $("#comment_id").val($(this).data("comment_id"));
+    console.log($(this).data("comment_id"));
+  });
 });
 /******/ })()
 ;

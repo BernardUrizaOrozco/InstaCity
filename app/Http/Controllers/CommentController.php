@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
@@ -19,12 +20,22 @@ class CommentController extends Controller
     {
         $user_id = Auth::user()->id;
 
-        $comment = new Comment;
-        $comment->caption = $request->caption;
-        $comment->post_id = $request->post_id;
-        $comment->likes = 0;
-        $comment->user_id = $user_id;
-        $comment->save();
+        if (substr($request->caption, 0, 1) === '@'){
+            $response = new Response;
+            $response->caption = $request->caption;
+            $response->comment_id = $request->comment_id;
+            $response->likes = 0;
+            $response->user_id = $user_id;
+            $response->save();
+        }
+        else{
+            $comment = new Comment;
+            $comment->caption = $request->caption;
+            $comment->post_id = $request->post_id;
+            $comment->likes = 0;
+            $comment->user_id = $user_id;
+            $comment->save();
+        }
 
         return back();
     }

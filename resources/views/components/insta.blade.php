@@ -52,7 +52,7 @@
                         </div>
                         @if( $canComment )
                         <div class="align-top inline-block">
-                            <a href="javascript:alert(3)" class="mr-2 font-bold hover:underline">Replay</a>
+                            <a href="javascript:void(0)" data-comment_id="{{ $comment->id }}" data-username="{{ $comment->user->username }}" class="mr-2 font-bold replayTo hover:underline">Replay</a>
                         </div>
                         @endif
                     </div>
