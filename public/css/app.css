@@ -31432,6 +31432,13 @@ select {
           animation: bounce 1s infinite;
 }
 
+.hero-icon {
+  width: 20px;
+  position: relative;
+  display: inline;
+  top: -1px;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

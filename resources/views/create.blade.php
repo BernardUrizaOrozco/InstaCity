@@ -41,6 +41,7 @@
                                     </ul>
                                 </div>
                                 @endif
+                                @if (!($message = Session::get('success')))
                                 <form class="divide-y divide-gray-200" action="{{ route('add') }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
@@ -76,6 +77,7 @@
                                             class="bg-blue-500 flex justify-center items-center w-full text-white px-4 py-3 rounded-md focus:outline-none">Create</button>
                                     </div>
                                 </form>
+                                @endif
                             </div>
                         </div>
                     </div>
