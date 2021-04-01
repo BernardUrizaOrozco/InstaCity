@@ -27,8 +27,8 @@ Route::get('/post/{post}',[PostsController::class, 'show'])->name('show');
 Route::get('/post',[PostsController::class, 'store'])->name('store');
 
 
-Route::get('/follow/{user}',[ProfileUserPivotController::class, 'follow']);
-Route::get('/unfollow/{user}',[ProfileUserPivotController::class, 'unfollow']);
+Route::post('/follow',[ProfileUserPivotController::class, 'follow'])->name('follow');
+Route::post('/unfollow',[ProfileUserPivotController::class, 'unfollow'])->name('unfollow');
 
 Route::get('/',[ProfileController::class, 'index'])->middleware(['auth'])->name('principal');
 Route::get('/show/{username}',[ProfileController::class, 'show'])->name('show');

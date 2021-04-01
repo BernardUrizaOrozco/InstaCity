@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
             'user_id' => 11,
         ]);
         DB::table('profile_user')->insert([
-            'profile_id' => 9,
+            'profile_id' => 4,
             'user_id' => 11,
         ]);
     }

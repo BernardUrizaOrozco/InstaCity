@@ -29,14 +29,18 @@
             @if( $user->profile->followers->where('id','=',Auth::user()->id)->first() )
 
             <!-- unfollow button -->
-            <form method="GET" action="/unfollow/{{ $user->id }}">
+            <form method="POST" action="{{ route('unfollow') }}" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" name="unfollow" id="unfollow" value="{{ $user->profile->id }}" />
                 <button type="submit" class="bg-white border px-2 py-1 
                                     text-black font-semibold text-sm rounded text-center 
                                     sm:inline-block block">Unfollow</button>
                 <form>
                     @else
                     <!-- follow button -->
-                    <form method="GET" action="/follow/{{ $user->id }}">
+                    <form method="POST" action="{{ route('follow') }}" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" name="follow" id="follow" value="{{ $user->profile->id }}" />
                         <button type="submit" class="bg-blue-500 px-2 py-1 
                             text-white font-semibold text-sm rounded text-center 
                             sm:inline-block block">Follow</button>

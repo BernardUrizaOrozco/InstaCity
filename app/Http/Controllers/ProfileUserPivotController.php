@@ -19,26 +19,30 @@ class ProfileUserPivotController extends Controller
         $this->middleware('auth');
     }
 
-    public function follow(User $user)
+    public function follow(Request $request)
     {
         $user_id = Auth::user()->id;
 
+        $profile_id = $request->follow;
+
         DB::table('profile_user')->insert([
-            'profile_id' => $user->profile->id,
+            'profile_id' => $profile_id,
             'user_id' => $user_id,
         ]);
 
-        return view('profile', compact('user'));
+        return back();
     }
 
-    public function unfollow(User $user)
+    public function unfollow(Request $request)
     {
         $user_id = Auth::user()->id;
+
+        $profile_id = $request->unfollow;
         
-        $profileUserPivot = ProfileUserPivot::where('profile_id', $user->profile->id)->where('user_id', $user_id);
+        $profileUserPivot = ProfileUserPivot::where('profile_id', $profile_id)->where('user_id', $user_id);
 
         $profileUserPivot->delete();
 
-        return view('profile', compact('user'));
+        return back();
     }
 }
