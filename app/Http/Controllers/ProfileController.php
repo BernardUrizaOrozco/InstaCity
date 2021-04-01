@@ -21,7 +21,7 @@ class ProfileController extends Controller
             }
         }
         shuffle($posts);
-        $followings = $followings->toArray();
+        $followings = User::inRandomOrder()->get();
         return view('home', compact('posts', 'followings'));
     }
     
