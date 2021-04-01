@@ -1,5 +1,5 @@
-<div class="flex border-t">
-    <form action="/" method="POST">
+<form action="/" method="POST">
+    <div class="flex border-t">
         <div class="flex-shrink flex justify-center w-16 h-12">
             <a href="/me" class="mr-2 font-bold hover:underline self-center cursor-pointer">
                 <div class="rounded-full h-8 w-8 bg-gray-500 flex items-center overflow-hidden">
@@ -15,5 +15,5 @@
             <input type="text" class="hidden" name="post_id" value="{{ $post->id }}">
             <button class="text-blue-400 hover:text-blue-800 self-center" type="submit">Post</button>
         </div>
-    </form>
-</div>
+    </div>
+</form>

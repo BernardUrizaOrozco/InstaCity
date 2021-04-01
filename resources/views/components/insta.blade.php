@@ -1,4 +1,8 @@
-<div class="rounded overflow-hidden border w-full lg:w-6/12 md:w-6/12 bg-white mx-3 md:mx-0 lg:mx-0">
+<div class="bg-white border d-block lg:mx-0 m-auto mx-3 overflow-hidden rounded" style="
+    max-width: 724px;
+    display: block;
+    margin: auto;
+">
     <div class="w-full flex justify-between p-3 border-b">
         <a href="/show/{!! $post->user->username !!}" class="mr-2 flex font-bold hover:underline self-center">
             <div class="rounded-full h-8 w-8 bg-gray-500 flex items-center justify-center overflow-hidden">

@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class ProfileUserPivot extends Model
 {
     use HasFactory;
+    protected $table = 'profile_user';
 }

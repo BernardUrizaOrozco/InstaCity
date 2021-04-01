@@ -33,22 +33,15 @@
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-
-                            <x-dropdown-link :href="route('create')">
+                            <a href="/create" class="mr-2 flex font-bold hover:underline self-center">
                                 {{ __('New post') }}
-                            </x-dropdown-link>
-
-                            <x-dropdown-link :href="route('me')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
+                            </a>
+                            <a href="/me" class="mr-2 flex font-bold hover:underline self-center">
                                 {{ __('My profile') }}
-                            </x-dropdown-link>
-
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
+                            </a>
+                            <a href="/logout" class="mr-2 flex font-bold hover:underline self-center">
                                 {{ __('Log out') }}
-                            </x-dropdown-link>
+                            </a>
                         </form>
                     </x-slot>
                 </x-dropdown>
