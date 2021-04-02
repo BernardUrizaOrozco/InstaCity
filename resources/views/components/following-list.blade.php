@@ -14,7 +14,7 @@
                 <!-- follow button -->
                 <form method="POST" action="{{ route('follow') }}" enctype="multipart/form-data">
                     @csrf
-                    <input type="hidden" name="follow" id="follow" value="{{ $following->profile->id }}" />
+                    <input type="hidden" name="follow" id="follow" value="{{ $following->id }}" />
                     <button type="submit" class="bg-blue-500 px-2 py-1 
                         text-white font-semibold text-sm rounded text-center 
                         sm:inline-block block">Follow</button>

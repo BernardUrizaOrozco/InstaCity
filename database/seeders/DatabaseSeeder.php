@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {   
+    {   /*
         $this->call([
             PostSeeder::class,
             UserSeeder::class,
@@ -48,6 +48,6 @@ class DatabaseSeeder extends Seeder
         DB::table('profile_user')->insert([
             'profile_id' => 4,
             'user_id' => 6,
-        ]);
+        ]);*/
     }
 }
